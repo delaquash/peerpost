@@ -1,13 +1,12 @@
-
+"use client";
 import { getServerSession } from "next-auth/next";
 import Link from "next/link";
-import { authOptions } from "../../pages/api/auth/[...nextauth]";
+import { authOptions } from "../../pages/api/post/auth/[...nextauth]";
 import LoggedOut from "./Logged";
 import Login from "./Login";
 
 export default async function Nav() {
   const session = await getServerSession(authOptions);
-  console.log(session);
   return (
     <nav className="flex justify-between items-center py-8">
       <Link href={"/"}>
@@ -15,7 +14,7 @@ export default async function Nav() {
       </Link>
       <ul className="flex items-center gap-6">
         {!session?.user && <Login />}
-        {session?.user && <LoggedOut image={session.user.image || ""} />}
+        {session?.user && <LoggedOut image={session.user?.image || ""} />}
       </ul>
     </nav>
   );
