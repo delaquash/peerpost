@@ -20,6 +20,16 @@ model Post {
   user      User     @relation(fields: [userId], references: [id])
 }
 
+model Comment {
+  id        String   @id @default(cuid())
+  message   String
+  postId    String
+  userId    String
+  createdAt DateTime @default(now())
+  post      POST     @relation(fields: [postId], references: [id])
+  user    User  @relation(fields: [userId], references: [id])
+}
+
 model Account {
   id                String  @id @default(cuid())
   userId            String
