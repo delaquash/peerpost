@@ -1,7 +1,7 @@
 "use client";
 import { getServerSession } from "next-auth/next";
 import Link from "next/link";
-import { authOptions } from "../../pages/api/post/auth/[...nextauth]";
+import { authOptions } from "../../pages/api/auth/[...nextauth]";
 import LoggedOut from "./Logged";
 import Login from "./Login";
 

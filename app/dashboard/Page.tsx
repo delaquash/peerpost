@@ -1,4 +1,4 @@
-import { authOptions } from "@/pages/api/post/auth/[...nextauth]";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
