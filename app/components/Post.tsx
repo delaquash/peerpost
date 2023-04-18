@@ -8,9 +8,10 @@ export interface IPost {
   postTitle: string;
   user: string;
   id: string;
+  Comment: string;
 }
 
-export default function Post({ avatar, name, postTitle, id }: IPost) {
+export default function Post({ avatar, name, postTitle, id, Comment }: IPost) {
   return (
     <div className="bg-white my-8 p-8 rounded-lg">
       <div className="gap-2 flex items-center">
@@ -28,7 +29,7 @@ export default function Post({ avatar, name, postTitle, id }: IPost) {
       </div>
       <div className="flex cursor-pointer items-center gap-4">
         <Link href={`/post/${id}`}>
-          <p className="text-sm font-bold text-gray-700">Comment</p>
+          <p className="text-sm font-bold text-gray-700">{Comment?.length}</p>
         </Link>
       </div>
     </div>

@@ -1,9 +1,9 @@
 "use client";
 import axios from "axios";
 import { useQuery } from "react-query";
-import Post, { IPost } from "./components/Post";
+import { PostType } from "../app/types/Posts";
+import Post from "./components/Post";
 import AddPost from "./components/addPosts";
-import { PostType } from "../app/types/Posts"
 
 const allPost = async () => {
   const response = await axios.get("/api/post/getPost");
@@ -22,6 +22,7 @@ export default function Home() {
       <AddPost />
       {data?.map((post) => (
         <Post
+          comments={post.Comment}
           key={post.id}
           name={post.user.name}
           avatar={post.user.image}
