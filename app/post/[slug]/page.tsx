@@ -1,7 +1,6 @@
 "use client";
 
 import Post from "@/app/components/Post";
-import { PostType } from "@/app/types/Posts";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -26,11 +25,13 @@ export default function PostDetails(url: URL) {
   return (
     <main>
       <Post
-              avatar={data.user.image}
-              name={data.user.name}
-              postTitle={data.title}
-              id={data.id}
-              comments={data.Comment}       />
+        avatar={data.user.image}
+        name={data.user.name}
+        postTitle={data.title}
+        id={data.id}
+        comments={data.Comment}
+      />
+      
     </main>
   );
 }
