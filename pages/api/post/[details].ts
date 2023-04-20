@@ -13,7 +13,8 @@ export default async function handler(
         },
         include: {
           user: true,
-          Comment: {
+          hearts: true,
+          comments: {
             orderBy: {
               createdAt: "desc",
             },
