@@ -45,12 +45,13 @@ model Heart {
 
 model Comment {
   id        String   @id @default(cuid())
-  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
-  user      User     @relation(fields: [userId], references: [id])
-  title     String
+  message   String
   postId    String
   userId    String
   createdAt DateTime @default(now())
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id])
+ 
 }
 
 model Account {
